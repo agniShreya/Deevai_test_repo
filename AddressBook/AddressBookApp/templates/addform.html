@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'header.html' %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en"><center><h1>Welcome to Address book </h1></center>  
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class= "container-fluid">
+      <div class="row">
+     <div id = "loc">
+     <form  method="post" action="/editUserProfile/" > {% csrf_token %}
+      <strong><input type="hidden"  id="sb"  name="username" , value = "{{ username }}">
+                <button type="submit" id = "lg">
+                    Edit my Profile</button></form></strong>
+       <strong><input type="button"  id = "lg" onclick="location.href= '{% url 'logout' %}'"  value="logOUT" /></strong>
+      </div>
+</div>
+</div>
+<div>
+<div><strong><a href="{% url 'home' %}" >Go back to home</a></strong></div>
+{% if form %}
+<form method="post" action="/addcontact/" id="butt" align="center">
+{% csrf_token %}
+<table align="center" style="color:white">
+{{ form }}
+</table>
+<input type="submit" value="Submit Form" id="sb"/>
+</form>
+{% endif %}
+</div>
+{% if message %}
+<center><strong>{{ message }}<h3></h3></strong></center>
+{% endif %}
+</body>
+</html>
+{% endblock content %}
+

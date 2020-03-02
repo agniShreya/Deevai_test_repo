@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends 'header.html' %}
+{% load staticfiles %}
+{% block content %}
+<html lang="en"><center><h1>Welcome to Address book </h1></center>  
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/AddressBook/AddressBookApp/static/style.css">
+  <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript"  src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+   <style>
+   </style>
+</head>
+<body>
+<div class= "container-fluid">
+      <div class="row">
+     <div id = "loc">
+       <form  method="post" action="/editUserProfile/" > {% csrf_token %}
+      <strong><input type="hidden"  id="sb"  name="username" , value = "{{ username }}">
+                <button type="submit" id = "lg">
+                    Edit my Profile</button></form></strong>
+       <strong><input type="button"  id = "lg" onclick="location.href= '{% url 'logout' %}'"  value="logOUT" /></strong>
+      </div>
+</div>
+</div>
+{% if username %}
+   <center><strong><h2>Hi, {{ username }}. Thanks for logging in</h2></strong></center>
+{% endif %}
+<center>
+<div id= "container" class="btn btn-default">
+<div>
+<a href="/users/">
+   <input type="button" value="View All contacts" id="sb" /></a>
+</div><br>
+<div>
+<a href="/editinfo/">
+   <input type="button" value="Edit contact" id="sb"/>
+</a></div><br>
+<div>
+<a href="/deleteView/">
+   <input type="button" value="Delete contact" id="sb"/>
+</a></div><br>
+<a href="/addcontact/">
+   <input type="button" value="Add contact" id="sb"/>
+</a></div>
+</body>
+</div>
+</center>
+</html>
+{% endblock content %}
+

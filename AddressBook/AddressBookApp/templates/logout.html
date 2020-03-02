@@ -1,0 +1,11 @@
+{% extends 'header.html' %}
+{% load staticfiles %}
+{% block content %}
+<html>
+<head> 
+<link rel="stylesheet" href="/AddressBook/AddressBookApp/static/style.css">
+</head>
+<center><h2>You are logged out successfully!!!</h2>
+ <div><strong><a href="{% url 'login' %}" id="lk">click here to login again</a></strong></div></center>
+</html>
+{% endblock content %}

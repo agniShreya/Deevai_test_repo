@@ -1,0 +1,128 @@
+li a {
+    color: green;
+}
+body {
+    background: white url("images/back.jpg") no-repeat right bottom;  background-size:100%;
+    background-position: top;
+    background-attachment: fixed;
+    background-opacity: 0.5;
+}
+
+#butt {
+	background:  rgba(0,0,0,0.5);
+	margin-left: 30%;
+	margin-right: 30%;
+	border-radius: 3%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+#container{
+	width: 500px;
+    height: 300px;    
+    padding: 50px;
+}
+
+
+#sb {
+	padding: 10px 20px;
+	border-radius: 5px;
+	background: black;
+	color: white;
+	postion:center;
+}
+
+#lg {
+	padding: 5px;
+	border-radius: 5px;
+	background: black;
+	color: white;
+	
+}
+
+#loc {
+	text-align: right;
+	margin-left: 20%;
+	margin-top: -2%;
+}
+
+h2 {
+	color: white;
+}
+
+h1 {
+	color: white !important;
+}
+
+#hd {
+	color: white;
+}
+
+#lk {
+	link-color: black;
+}
+
+
+
+#us {
+	color: white;
+	text-align: center;
+	background:  rgba(0,0,0,0.5);
+	margin-left: 35%;
+	margin-right: 35%;
+	padding-top: 3%;
+	padding-right: 3%;
+	padding-bottom: 3%;
+	border-radius: 3%;
+}
+
+#user_table_filter {
+	color: white;
+}
+
+tr {
+	color: white;
+}
+
+td {
+	color: black;
+}
+
+#user_table_length {
+	color: white;
+}
+
+#user_table_length select {
+	color: black;
+}
+
+#user_table_info {
+	color: black;
+}
+
+#user_table_previous {
+	link-color: white;
+}
+
+a#user_table_next {
+	link-color: white;
+}
+
+a#user_table_next: link {
+	color: black;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: blue;
+}

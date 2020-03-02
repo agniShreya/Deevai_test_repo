@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'header.html' %}
+{% load staticfiles %}
+{% block content %}
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/AddressBook/AddressBookApp/static/style.css">
+		</head>
+<body></body>
+<div class="container" >
+    <div class="col-xs-8" id="loc">
+      <div class="row">
+    <div class="col-md-4 col-md-push-8" id="loc"><input type="button" id="lg" onclick="location.href= '{% url 'logout' %}'"  value="logout" />
+    <a href="edit.html">
+   <input type="button" value="Edit users" id="sb" />
+	</a>
+     <br><br><br><br></div>
+    </div>
+  </div>
+</div>
+<div><strong><a href="{% url 'home' %}" >Go back to home</a></strong></div></center>
+{% if form %}
+<center><strong><h3>Username : {{ email }}</h3></strong></center>
+<div id="butt">
+ <form method="post" action="/UserProfile/">{% csrf_token %}
+<table align="center" style="color: white">
+{{ form }}
+</table>
+ <center><input type="submit" id="sb" value="Save"/></center>
+ <input type="hidden" name="email" value="{{ email }}">
+</form>
+{% endif %}
+{% if msg %}
+<center><strong><h3>{{ msg }}</h3></strong></center>
+{% endif %}
+ {% endblock %}
+</div>
+</html>

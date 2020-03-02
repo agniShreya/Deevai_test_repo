@@ -1,0 +1,26 @@
+{% extends 'header.html' %}
+{% load staticfiles %}
+{% block content %}
+<html>
+<head>
+ <link rel="stylesheet" href="/AddressBook/AddressBookApp/static/style.css">
+
+</head>
+<div><strong><a href="{% url 'home' %}" >Go back to home</a></strong></div>
+{% if form %}
+<center><strong><h4>You are updating details of {{ email }}</h4></strong></center>
+ <form method="post" action="/updateView/"  id="butt">
+{% csrf_token %}
+<table align="center" style="color:white">
+{{ form }}
+</table>
+<input type="submit" value="Submit Form" id="sb"/>
+ <input type="hidden" name="email" value="{{ email }}">
+ </form>
+ {% endif %}
+ {% if message %}
+ <center><h2>{{ message }}</h2><strong></strong></center>
+ {% endif %}
+ </div>
+</html>
+{% endblock %}
